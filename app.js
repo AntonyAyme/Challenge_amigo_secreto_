@@ -28,3 +28,17 @@ function agregarAmigo() {
         input.value = ""; // Limpiamos el campo de entrada
     }
 }
+
+// 🟢 Función para sortear un amigo al azar
+function sortearAmigo() {
+    if (listaAmigos.length === 0) {
+        alert("No hay nombres en la lista para realizar el sorteo.");
+        return;
+    }
+
+    let indiceAleatorio = Math.floor(Math.random() * listaAmigos.length); // Número aleatorio
+    let amigoSeleccionado = listaAmigos[indiceAleatorio]; // Obtener el nombre aleatorio
+
+    let resultadoHTML = document.querySelector("#resultado");
+    resultadoHTML.innerHTML = `<li>🎉 ¡El amigo secreto es: <strong>${amigoSeleccionado}</strong>! 🎁</li>`;
+}
